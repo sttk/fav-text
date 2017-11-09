@@ -95,6 +95,7 @@ If *padding* is not specified, this function use a white space (`'\u0020'`) as a
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data type.
 
+**NOTE:** This function is different from `String#padStart` at the point that it uses a white space (`'\u0020'`) as *padding* when specified `null` or an empty string to *padding*.  
 
 #### Parameter:
 
@@ -122,14 +123,15 @@ If *padding* is not specified, this function use a white space (`'\u0020'`) as a
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data type.
 
+**NOTE:** This function is different from `String#padEnd` at the point that it uses a white space (`'\u0020'`) as *padding* when specified `null` or an empty string to *padding*. 
 
 #### Parameter:
 
 | Parameter |  Type  | Description                      |
 |-----------|--------|----------------------------------|
 | source    | string | The source string.               |
-| length    | number | The length of the result text. (Optional, and `source.length` in default. |
-| padding   | string | The padding characters. (Optional, and `' '` in default. |
+| length    | number | The length of the result text. (Optional, and `source.length` in default.) |
+| padding   | string | The padding characters. (Optional, and `' '` in default.) |
 
 #### Return:
 
@@ -166,6 +168,13 @@ Remove leading and trailing white spaces or *chars* from *source*.
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
 
+#### Parameters:
+
+| Parameter |  Type  | Description        |
+|-----------|:------:|--------------------|
+| source    | string | The source string. |
+| chars     | string | The characters to be trimmed. (Optional, and white space in default.) |
+
 #### Return:
 
 The trimmed string.
@@ -180,6 +189,13 @@ Remove leading white spaces or *chars* from *source*.
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
 
+#### Parameters:
+
+| Parameter |  Type  | Description        |
+|-----------|:------:|--------------------|
+| source    | string | The source string. |
+| chars     | string | The characters to be trimmed. (Optional, and white space in default.) |
+
 #### Return:
 
 The trimmed string.
@@ -193,6 +209,13 @@ The trimmed string.
 Remove trailing white spaces or *chars* from *source*.
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
+
+#### Parameters:
+
+| Parameter |  Type  | Description        |
+|-----------|:------:|--------------------|
+| source    | string | The source string. |
+| chars     | string | The characters to be trimmed. (Optional, and white space in default.) |
 
 #### Return:
 
@@ -215,8 +238,6 @@ This function creates an unique string with following methods:
 ```
 new Date().getTime().toString(36) + <sequencial-number-in-application>.toString(36)
 ```
-
-***NOTE:*** *On a browser, the string returned by this function is unique in only the window.*
 
 #### Return:
 

@@ -27,7 +27,7 @@ Object.defineProperties(text, {
 
 module.exports = text;
 
-},{"@fav/text.escape":2,"@fav/text.pad":7,"@fav/text.pad-left":5,"@fav/text.pad-right":6,"@fav/text.repeat":8,"@fav/text.trim":11,"@fav/text.trim-left":9,"@fav/text.trim-right":10,"@fav/text.unique":12}],2:[function(require,module,exports){
+},{"@fav/text.escape":2,"@fav/text.pad":9,"@fav/text.pad-left":5,"@fav/text.pad-right":7,"@fav/text.repeat":10,"@fav/text.trim":13,"@fav/text.trim-left":11,"@fav/text.trim-right":12,"@fav/text.unique":14}],2:[function(require,module,exports){
 'use strict';
 
 var regexp = require('./lib/regexp');
@@ -63,6 +63,22 @@ module.exports = regexp;
 },{}],5:[function(require,module,exports){
 'use strict';
 
+var padLeft;
+
+/* istanbul ignore if */
+if (!Boolean(String.prototype.padStart)) {
+  padLeft = require('./lib/pad-left');
+} else {
+  padLeft = function(source, length, padding) {
+    return source.padStart(length, padding || ' ');
+  };
+}
+
+module.exports = padLeft;
+
+},{"./lib/pad-left":6}],6:[function(require,module,exports){
+'use strict';
+
 var repeat = require('@fav/text.repeat');
 
 function padLeft(source, length, padding) {
@@ -83,7 +99,23 @@ function padLeft(source, length, padding) {
 
 module.exports = padLeft;
 
-},{"@fav/text.repeat":8}],6:[function(require,module,exports){
+},{"@fav/text.repeat":10}],7:[function(require,module,exports){
+'use strict';
+
+var padRight;
+
+/* istanbul ignore if */
+if (!Boolean(String.prototype.padEnd)) {
+  padRight = require('./lib/pad-right');
+} else {
+  padRight = function(source, length, padding) {
+    return source.padEnd(length, padding || ' ');
+  };
+}
+
+module.exports = padRight;
+
+},{"./lib/pad-right":8}],8:[function(require,module,exports){
 'use strict';
 
 var repeat = require('@fav/text.repeat');
@@ -106,7 +138,7 @@ function padRight(source, length, padding) {
 
 module.exports = padRight;
 
-},{"@fav/text.repeat":8}],7:[function(require,module,exports){
+},{"@fav/text.repeat":10}],9:[function(require,module,exports){
 'use strict';
 
 var repeat = require('@fav/text.repeat');
@@ -134,7 +166,7 @@ function pad(source, length, padding) {
 
 module.exports = pad;
 
-},{"@fav/text.repeat":8}],8:[function(require,module,exports){
+},{"@fav/text.repeat":10}],10:[function(require,module,exports){
 'use strict';
 
 function repeat(source, ntimes) {
@@ -154,7 +186,7 @@ function repeat(source, ntimes) {
 
 module.exports = repeat;
 
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 var escape = require('@fav/text.escape').RegExpCharClass;
@@ -173,7 +205,7 @@ function trimLeft(source, chars) {
 
 module.exports = trimLeft;
 
-},{"@fav/text.escape":2}],10:[function(require,module,exports){
+},{"@fav/text.escape":2}],12:[function(require,module,exports){
 'use strict';
 
 var escape = require('@fav/text.escape').RegExpCharClass;
@@ -192,7 +224,7 @@ function trimRight(source, chars) {
 
 module.exports = trimRight;
 
-},{"@fav/text.escape":2}],11:[function(require,module,exports){
+},{"@fav/text.escape":2}],13:[function(require,module,exports){
 'use strict';
 
 var escape = require('@fav/text.escape').RegExpCharClass;
@@ -212,7 +244,7 @@ function trim(source, chars) {
 
 module.exports = trim;
 
-},{"@fav/text.escape":2}],12:[function(require,module,exports){
+},{"@fav/text.escape":2}],14:[function(require,module,exports){
 'use strict';
 
 var cyclicIncrement = require('./lib/cyclic-increment');
@@ -232,7 +264,7 @@ Object.defineProperty(unique, 'seqno', {
 
 module.exports = unique;
 
-},{"./lib/cyclic-increment":13}],13:[function(require,module,exports){
+},{"./lib/cyclic-increment":15}],15:[function(require,module,exports){
 'use strict';
 
 /* istanbul ignore next */
