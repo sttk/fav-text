@@ -1,6 +1,6 @@
 {
   "name": "@fav/text",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Function set of text manipulations for all versions of nodejs and major browsers.",
   "main": "index.js",
   "files": [
