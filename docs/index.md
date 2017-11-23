@@ -2,6 +2,29 @@
 
 ----
 
+### <u>endsWith(string, target [, length]) : boolean</u>
+
+Checks if *string* ends with *target*.
+If *length* is specified this function ends comparison at index `length - 1`.
+
+**NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
+
+#### Parameters:
+
+| Parameter    |  Type  | Description                               |
+|--------------|:------:|-------------------------------------------|
+| *string*     | string | The string to be checked.                 |
+| *target*     | string | The string to search for.                 |
+| *startIndex* | number | The index to search from.                 | 
+
+#### Return:
+
+True, if *string* ends with *target*, otherwise false.
+
+**Type:** boolean
+
+
+----
 ### <u>escape : object</u>
 
 Is a set of functins to escape characters in a string.
@@ -159,6 +182,29 @@ Repeat *source* *ntimes* times.
 The repeated string.
 
 **Type:** string
+
+
+----
+### <u>startsWith(string, target [, startIndex]) : boolean</u>
+
+Checks if *string* starts with *target*.
+If *startIndex* is specified this function starts comparison from *startIndex*.
+
+**NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
+
+#### Parameters:
+
+| Parameter    |  Type  | Description                               |
+|--------------|:------:|-------------------------------------------|
+| *string*     | string | The string to be checked.                 |
+| *target*     | string | The string to search for.                 |
+| *startIndex* | number | The index to search from.                 | 
+
+#### Return:
+
+True, if *string* starts with *target*, otherwise false.
+
+**Type:** boolean
 
 
 ----

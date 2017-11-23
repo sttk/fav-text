@@ -21,7 +21,7 @@ $ npm install --save @fav/text
 
 ## Usage
 
-For Node.js, when installing `@fav/text` from npm:
+For Node.js:
 
 ```js
 const text = require('@fav/text');
