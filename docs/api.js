@@ -32,7 +32,7 @@ function createNav() {
   var arr = document.getElementsByTagName('h3');
   for (var i = 0; i < arr.length; i++) {
     var h3 = arr[i];
-    var name = getFunctionName(h3.textContent);
+    var name = getFunctionName(h3.textContent).trim();
     h3.id = name;
     nav.appendChild(createNavItem(name));
   }

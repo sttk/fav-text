@@ -1,11 +1,11 @@
-# [@fav/text][repo-url] ver. 0.2.0 - API document
+# [@fav/text][repo-url] 0.2.0 API document
 
 ----
 
 ### <u>endsWith(string, target [, length]) : boolean</u>
 
 Checks if *string* ends with *target*.
-If *length* is specified this function ends comparison at index `length - 1`.
+If *length* is specified, this function ends comparison at index `length - 1`.
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
 
@@ -40,7 +40,7 @@ This function set provides escapings for following syntaxes and formats:
 
 #### <u>escape\['RegExp'\](source) : string</u>
 
-Escape special characters of Regular Expression.
+Escapes special characters of Regular Expression.
 
 The special characters which are escaped are as follows: `^$\.*+?()[]{}|`.
 
@@ -63,7 +63,7 @@ An escaped string.
 
 #### <u>escape\['RegExpCharClass'\](source) : string</u>
 
-Escape special characters of Regular Expression Character Class.
+Escapes special characters of Regular Expression Character Class.
 
 The special characters which are escaped are as follows: `-^]\`.
 
@@ -118,7 +118,7 @@ If *padding* is not specified, this function use a white space (`'\u0020'`) as a
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data type.
 
-**NOTE:** This function is different from `String#padStart` at the point that it uses a white space (`'\u0020'`) as *padding* when specified `null` or an empty string to *padding*.  
+**NOTE:** This function is different from `String#padStart` at the point that this function uses a white space (`'\u0020'`) as *padding* when specified `null` or an empty string to *padding*.
 
 #### Parameter:
 
@@ -146,7 +146,7 @@ If *padding* is not specified, this function use a white space (`'\u0020'`) as a
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data type.
 
-**NOTE:** This function is different from `String#padEnd` at the point that it uses a white space (`'\u0020'`) as *padding* when specified `null` or an empty string to *padding*. 
+**NOTE:** This function is different from `String#padEnd` at the point that this function uses a white space (`'\u0020'`) as *padding* when specified `null` or an empty string to *padding*.
 
 #### Parameter:
 
@@ -210,7 +210,7 @@ True, if *string* starts with *target*, otherwise false.
 ----
 ### <u>trim(source [, chars]) : string</u>
 
-Remove leading and trailing white spaces or *chars* from *source*.
+Removes leading and trailing white spaces or *chars* from *source*.
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
 
@@ -231,7 +231,7 @@ The trimmed string.
 ----
 ### <u>trimLeft(source [, chars]) : string</u>
 
-Remove leading white spaces or *chars* from *source*.
+Removes leading white spaces or *chars* from *source*.
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
 
@@ -252,7 +252,7 @@ The trimmed string.
 ----
 ### <u>trimRight(source [, chars]) : string</u>
 
-Remove trailing white spaces or *chars* from *source*.
+Removes trailing white spaces or *chars* from *source*.
 
 **NOTE:** This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
 
@@ -271,8 +271,6 @@ The trimmed string.
 
 
 ----
-<a name="unique"></a>
-
 ### <u>unique() : string</u>
 
 Returns an unique string in the application.
@@ -284,6 +282,8 @@ This function creates an unique string with following methods:
 ```
 new Date().getTime().toString(36) + <sequencial-number-in-application>.toString(36)
 ```
+
+***NOTE:*** *On a browser, the string returned by this function is unique in only the window.*
 
 #### Return:
 

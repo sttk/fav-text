@@ -201,7 +201,8 @@ function repeat(source, ntimes) {
   var unitlen = source.length;
   var halftime = Math.ceil(ntimes / 2);
 
-  for (var i = 1; i < halftime; i += i) {
+  var i;
+  for (i = 1; i < halftime; i += i) {
     source += source;
   }
 
@@ -294,7 +295,9 @@ function unique() {
 
 Object.defineProperty(unique, 'seqno', {
   set: function() {},
-  get: function() { return seqNo; },
+  get: function() {
+    return seqNo;
+  },
 });
 
 module.exports = unique;

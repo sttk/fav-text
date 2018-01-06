@@ -7,11 +7,11 @@
 <script src="./api.js"></script>
 </head>
 <body>
-<h1 id="-fav-text-repo-url-ver-0-2-0-api-document"><a href="https://github.com/sttk/fav-text/">@fav/text</a> ver. 0.2.0 - API document</h1>
+<h1 id="-fav-text-repo-url-0-2-0-api-document"><a href="https://github.com/sttk/fav-text/">@fav/text</a> 0.2.0 API document</h1>
 <hr>
 <h3 id="-u-endswith-string-target-length-boolean-u-"><u>endsWith(string, target [, length]) : boolean</u></h3>
 <p>Checks if <em>string</em> ends with <em>target</em>.
-If <em>length</em> is specified this function ends comparison at index <code>length - 1</code>.</p>
+If <em>length</em> is specified, this function ends comparison at index <code>length - 1</code>.</p>
 <p><strong>NOTE:</strong> This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
 <h4 id="parameters-">Parameters:</h4>
 <table>
@@ -54,7 +54,7 @@ If <em>length</em> is specified this function ends comparison at index <code>len
 <p><strong>NOTE:</strong> The functions in this set doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
 <p><a name="regexp"></a></p>
 <h4 id="-u-escape-regexp-source-string-u-"><u>escape[&#39;RegExp&#39;](source) : string</u></h4>
-<p>Escape special characters of Regular Expression.</p>
+<p>Escapes special characters of Regular Expression.</p>
 <p>The special characters which are escaped are as follows: <code>^$\.*+?()[]{}|</code>.</p>
 <p>The specification of the special characters of Regular Expression comes from <a href="http://ecma-international.org/ecma-262/7.0/#sec-patterns">ECMA-262 — 21.2 RegExp (Regular Expression) Objects</a>.</p>
 <h5 id="parameter-">Parameter:</h5>
@@ -79,7 +79,7 @@ If <em>length</em> is specified this function ends comparison at index <code>len
 <p><strong>Type:</strong> string</p>
 <p><a name="regexp_charclass"></a></p>
 <h4 id="-u-escape-regexpcharclass-source-string-u-"><u>escape[&#39;RegExpCharClass&#39;](source) : string</u></h4>
-<p>Escape special characters of Regular Expression Character Class.</p>
+<p>Escapes special characters of Regular Expression Character Class.</p>
 <p>The special characters which are escaped are as follows: <code>-^]\</code>.</p>
 <h5 id="parameter-">Parameter:</h5>
 <table>
@@ -143,7 +143,7 @@ If <em>length</em> is specified this function ends comparison at index <code>len
 <p>If <em>length</em> is less than the length of <em>source</em>, return <em>source</em> with no padding.</p>
 <p>If <em>padding</em> is not specified, this function use a white space (<code>&#39;\u0020&#39;</code>) as a padding.</p>
 <p><strong>NOTE:</strong> This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data type.</p>
-<p><strong>NOTE:</strong> This function is different from <code>String#padStart</code> at the point that it uses a white space (<code>&#39;\u0020&#39;</code>) as <em>padding</em> when specified <code>null</code> or an empty string to <em>padding</em>.  </p>
+<p><strong>NOTE:</strong> This function is different from <code>String#padStart</code> at the point that this function uses a white space (<code>&#39;\u0020&#39;</code>) as <em>padding</em> when specified <code>null</code> or an empty string to <em>padding</em>.</p>
 <h4 id="parameter-">Parameter:</h4>
 <table>
 <thead>
@@ -180,7 +180,7 @@ If <em>length</em> is specified this function ends comparison at index <code>len
 <p>If <em>length</em> is less than the length of <em>source</em>, return <em>source</em> with no padding.</p>
 <p>If <em>padding</em> is not specified, this function use a white space (<code>&#39;\u0020&#39;</code>) as a padding.</p>
 <p><strong>NOTE:</strong> This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data type.</p>
-<p><strong>NOTE:</strong> This function is different from <code>String#padEnd</code> at the point that it uses a white space (<code>&#39;\u0020&#39;</code>) as <em>padding</em> when specified <code>null</code> or an empty string to <em>padding</em>. </p>
+<p><strong>NOTE:</strong> This function is different from <code>String#padEnd</code> at the point that this function uses a white space (<code>&#39;\u0020&#39;</code>) as <em>padding</em> when specified <code>null</code> or an empty string to <em>padding</em>.</p>
 <h4 id="parameter-">Parameter:</h4>
 <table>
 <thead>
@@ -277,7 +277,7 @@ If <em>startIndex</em> is specified this function starts comparison from <em>sta
 <p><strong>Type:</strong> boolean</p>
 <hr>
 <h3 id="-u-trim-source-chars-string-u-"><u>trim(source [, chars]) : string</u></h3>
-<p>Remove leading and trailing white spaces or <em>chars</em> from <em>source</em>.</p>
+<p>Removes leading and trailing white spaces or <em>chars</em> from <em>source</em>.</p>
 <p><strong>NOTE:</strong> This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
 <h4 id="parameters-">Parameters:</h4>
 <table>
@@ -306,7 +306,7 @@ If <em>startIndex</em> is specified this function starts comparison from <em>sta
 <p><strong>Type:</strong> string</p>
 <hr>
 <h3 id="-u-trimleft-source-chars-string-u-"><u>trimLeft(source [, chars]) : string</u></h3>
-<p>Remove leading white spaces or <em>chars</em> from <em>source</em>.</p>
+<p>Removes leading white spaces or <em>chars</em> from <em>source</em>.</p>
 <p><strong>NOTE:</strong> This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
 <h4 id="parameters-">Parameters:</h4>
 <table>
@@ -335,7 +335,7 @@ If <em>startIndex</em> is specified this function starts comparison from <em>sta
 <p><strong>Type:</strong> string</p>
 <hr>
 <h3 id="-u-trimright-source-chars-string-u-"><u>trimRight(source [, chars]) : string</u></h3>
-<p>Remove trailing white spaces or <em>chars</em> from <em>source</em>.</p>
+<p>Removes trailing white spaces or <em>chars</em> from <em>source</em>.</p>
 <p><strong>NOTE:</strong> This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
 <h4 id="parameters-">Parameters:</h4>
 <table>
@@ -363,13 +363,13 @@ If <em>startIndex</em> is specified this function starts comparison from <em>sta
 <p>The trimmed string.</p>
 <p><strong>Type:</strong> string</p>
 <hr>
-<p><a name="unique"></a></p>
 <h3 id="-u-unique-string-u-"><u>unique() : string</u></h3>
 <p>Returns an unique string in the application.</p>
 <p>This unique string is not fixed-length and uses characters: <code>a-z0-9</code>.</p>
 <p>This function creates an unique string with following methods:</p>
 <pre><code>new Date().getTime().toString(36) + &lt;sequencial-number-in-application&gt;.toString(36)
-</code></pre><h4 id="return-">Return:</h4>
+</code></pre><p><strong><em>NOTE:</em></strong> <em>On a browser, the string returned by this function is unique in only the window.</em></p>
+<h4 id="return-">Return:</h4>
 <p>An unique string in the application.</p>
 <p><strong>Type:</strong> string</p>
 <hr>
