@@ -1,3 +1,3 @@
-# [@fav/text][repo-url] %%API_VERSION%% API document
+# [@fav/text][repo-url] ver. %%API_VERSION%% API document
 
 ----
