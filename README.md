@@ -83,7 +83,7 @@ This package provides API documents on [Github.io][api-url] or `docs/index.html`
 
 ## License
 
-Copyright (C) 2017 Takayuki Sato
+Copyright (C) 2017-2018 Takayuki Sato
 
 This program is free software under [MIT][mit-url] License.
 See the file LICENSE in this distribution for more details.
@@ -92,7 +92,7 @@ See the file LICENSE in this distribution for more details.
 [api-url]: https://sttk.github.io/fav-text/index.html
 [io-img]: http://img.shields.io/badge/API-github.io-ff99cc.svg
 [io-url]: https://sttk.github.io/fav-text/index.html
-[npm-img]: https://img.shields.io/badge/npm-v1.0.0-blue.svg
+[npm-img]: https://img.shields.io/badge/npm-v1.1.0-blue.svg
 [npm-url]: https://www.npmjs.com/package/@fav/text
 [mit-img]: https://img.shields.io/badge/license-MIT-green.svg
 [mit-url]: https://opensource.org/licenses/MIT
