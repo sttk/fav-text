@@ -7,7 +7,157 @@
 <script src="./api.js"></script>
 </head>
 <body>
-<h1 id="-fav-text-repo-url-ver-1-0-0-api-document"><a href="https://github.com/sttk/fav-text/">@fav/text</a> ver. 1.0.0 API document</h1>
+<h1 id="-fav-text-ver-1-0-0-api-document"><a href="https://github.com/sttk/fav-text/">@fav/text</a> ver. 1.0.0 API document</h1>
+<hr>
+<h3 id="-u-camelcase-text-string-u-"><u>camelCase(text) : string</u></h3>
+<p>Converts a string into camel case.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>After splitting into words, this function joins them and creates a camel case string.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word. (At a result, this function returns a string converted into lower case, e.g. <code>abc123</code>).</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h4 id="parameters-">Parameters:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be converted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-">Returns:</h4>
+<p>A string converted into camel case.</p>
+<p><strong>Type:</strong> string</p>
+<h4 id="-u-camelcase-split-text-array-u-"><u>camelCase.split(text) : Array</u></h4>
+<p>Splits a string into alphanumeric words.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be splitted.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>An array of splitted words.</p>
+<p><strong>Type:</strong> Array</p>
+<h4 id="-u-camelcase-join-words-string-u-"><u>camelCase.join(words) : string</u></h4>
+<p>Joins alphanumeric words and creates a camel case string.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>words</em></td>
+<td style="text-align:center">Array</td>
+<td style="text-align:left">An array of an alphanumeric words to be joined.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>A camel case string.</p>
+<p><strong>Type:</strong> string</p>
+<hr>
+<h3 id="-u-constantcase-text-string-u-"><u>constantCase(text) : string</u></h3>
+<p>Converts a string into constant case.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>After splitting into words, this function joins them and creates a constant case string.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word. (At a result, this function returns a string converted into upper case, e.g. <code>ABC123</code>).</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h4 id="parameters-">Parameters:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be converted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-">Returns:</h4>
+<p>A string converted into constant case.</p>
+<p><strong>Type:</strong> string</p>
+<h4 id="-u-constantcase-split-text-array-u-"><u>constantCase.split(text) : Array</u></h4>
+<p>Splits a string into alphanumeric words.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be splitted.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>An array of splitted words.</p>
+<p><strong>Type:</strong> Array</p>
+<h4 id="-u-constantcase-join-words-string-u-"><u>constantCase.join(words) : string</u></h4>
+<p>Joins alphanumeric words and creates a constant case string.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>words</em></td>
+<td style="text-align:center">Array</td>
+<td style="text-align:left">An array of an alphanumeric words to be joined.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>A constant case string.</p>
+<p><strong>Type:</strong> string</p>
 <hr>
 <h3 id="-u-endswith-string-target-length-boolean-u-"><u>endsWith(string, target [, length]) : boolean</u></h3>
 <p>Checks if <em>string</em> ends with <em>target</em>.
@@ -100,6 +250,81 @@ If <em>length</em> is specified, this function ends comparison at index <code>le
 </table>
 <h5 id="return-">Return:</h5>
 <p>An escaped string.</p>
+<p><strong>Type:</strong> string</p>
+<hr>
+<h3 id="-u-kebabcase-text-string-u-"><u>kebabCase(text) : string</u></h3>
+<p>Converts a string into kebab case.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>After splitting into words, this function joins them and creates a kebab case string.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word. (At a result, this function returns a string converted into lower case, e.g. <code>abc123</code>).</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h4 id="parameters-">Parameters:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be converted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-">Returns:</h4>
+<p>A string converted into kebab case.</p>
+<p><strong>Type:</strong> string</p>
+<h4 id="-u-kebabcase-split-text-array-u-"><u>kebabCase.split(text) : Array</u></h4>
+<p>Splits a string into alphanumeric words.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be splitted.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>An array of splitted words.</p>
+<p><strong>Type:</strong> Array</p>
+<h4 id="-u-kebabcase-join-words-string-u-"><u>kebabCase.join(words) : string</u></h4>
+<p>Joins alphanumeric words and creates a kebab case string.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>words</em></td>
+<td style="text-align:center">Array</td>
+<td style="text-align:left">An array of an alphanumeric words to be joined.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>A kebab case string.</p>
 <p><strong>Type:</strong> string</p>
 <hr>
 <h3 id="-u-pad-source-length-padding-string-u-"><u>pad(source [, length ] [, padding ]) : string</u></h3>
@@ -212,6 +437,81 @@ If <em>length</em> is specified, this function ends comparison at index <code>le
 <p>The padded string.</p>
 <p><strong>Type:</strong> string</p>
 <hr>
+<h3 id="-u-pascalcase-text-string-u-"><u>pascalCase(text) : string</u></h3>
+<p>Converts a string into pascal case.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>After splitting into words, this function joins them and creates a pascal case string.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h4 id="parameters-">Parameters:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be converted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-">Returns:</h4>
+<p>A string converted into pascal case.</p>
+<p><strong>Type:</strong> string</p>
+<h4 id="-u-pascalcase-split-text-array-u-"><u>pascalCase.split(text) : Array</u></h4>
+<p>Splits a string into alphanumeric words.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be splitted.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>An array of splitted words.</p>
+<p><strong>Type:</strong> Array</p>
+<h4 id="-u-pascalcase-join-words-string-u-"><u>pascalCase.join(words) : string</u></h4>
+<p>Joins alphanumeric words and creates a pascal case string.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>words</em></td>
+<td style="text-align:center">Array</td>
+<td style="text-align:left">An array of an alphanumeric words to be joined.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>A pascal case string.</p>
+<p><strong>Type:</strong> string</p>
+<hr>
 <h3 id="-u-repeat-source-ntimes-string-u-"><u>repeat(source, ntimes) : string</u></h3>
 <p>Repeat <em>source</em> <em>ntimes</em> times.</p>
 <p><strong>NOTE:</strong> This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
@@ -239,6 +539,81 @@ If <em>length</em> is specified, this function ends comparison at index <code>le
 </table>
 <h4 id="return-">Return:</h4>
 <p>The repeated string.</p>
+<p><strong>Type:</strong> string</p>
+<hr>
+<h3 id="-u-snakecase-text-string-u-"><u>snakeCase(text) : string</u></h3>
+<p>Converts a string into snake case.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>After splitting into words, this function joins them and creates a snake case string.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word. (At a result, this function returns a string converted into lower case, e.g. <code>abc123</code>).</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h4 id="parameters-">Parameters:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be converted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-">Returns:</h4>
+<p>A string converted into snake case.</p>
+<p><strong>Type:</strong> string</p>
+<h4 id="-u-snakecase-split-text-array-u-"><u>snakeCase.split(text) : Array</u></h4>
+<p>Splits a string into alphanumeric words.</p>
+<p>This function trys to split <em>text</em> into words with non-alphanumeric characters first. If <em>text</em> does not contains non-alphanumeric character, this function trys to split <em>text</em> into words before capital letters.</p>
+<p>If <em>text</em> is a string which is composed of either lower case characters and numerics only (e.g. <code>abc123</code>), or upper case characters and numerics only (e.g. <code>ABC123</code>), this function regards <em>text</em> as one word.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>text</em></td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">A string to be splitted.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>An array of splitted words.</p>
+<p><strong>Type:</strong> Array</p>
+<h4 id="-u-snakecase-join-words-string-u-"><u>snakeCase.join(words) : string</u></h4>
+<p>Joins alphanumeric words and creates a snake case string.</p>
+<p><strong><em>NOTE:</em></strong> <em>This function doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</em></p>
+<h5 id="parameters-">Parameters:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>words</em></td>
+<td style="text-align:center">Array</td>
+<td style="text-align:left">An array of an alphanumeric words to be joined.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns-">Returns:</h5>
+<p>A snake case string.</p>
 <p><strong>Type:</strong> string</p>
 <hr>
 <h3 id="-u-startswith-string-target-startindex-boolean-u-"><u>startsWith(string, target [, startIndex]) : boolean</u></h3>

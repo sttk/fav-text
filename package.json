@@ -48,12 +48,17 @@
     "uglify-js": "^3.0.26"
   },
   "dependencies": {
+    "@fav/text.camel-case": "^1.0.1",
+    "@fav/text.constant-case": "^1.0.1",
     "@fav/text.ends-with": "^1.0.1",
     "@fav/text.escape": "^1.0.1",
+    "@fav/text.kebab-case": "^1.0.1",
     "@fav/text.pad": "^1.0.1",
     "@fav/text.pad-left": "^1.0.1",
     "@fav/text.pad-right": "^1.0.1",
+    "@fav/text.pascal-case": "^1.0.1",
     "@fav/text.repeat": "^1.0.1",
+    "@fav/text.snake-case": "^1.0.1",
     "@fav/text.starts-with": "^1.0.1",
     "@fav/text.trim": "^1.0.1",
     "@fav/text.trim-left": "^1.0.1",

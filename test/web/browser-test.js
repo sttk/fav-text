@@ -6,6 +6,166 @@ var expect = chai.expect;
 
 
 
+var camelCase = fav.text.camelCase;
+
+describe('fav.text.camelCase', function() {
+
+  it('Should return an empty string when a given string is an empty string',
+  function() {
+    expect(camelCase('')).to.equal('');
+  });
+
+  it('Should return a string with no conversion when a given string is ' +
+  '\n\tcomposed of only lower cases and numbers', function() {
+    expect(camelCase('foo')).to.equal('foo');
+    expect(camelCase('foobarbaz')).to.equal('foobarbaz');
+    expect(camelCase('foo123')).to.equal('foo123');
+    expect(camelCase('foo1bar2baz3')).to.equal('foo1bar2baz3');
+  });
+
+  it('Should convert a lower case string when a given string is composed' +
+  '\n\t of only upper case characters', function() {
+    expect(camelCase('FOO')).to.equal('foo');
+    expect(camelCase('FOOBARBAZ')).to.equal('foobarbaz');
+  });
+
+  it('Should convert a camel case string when a given string is camel case',
+  function() {
+    expect(camelCase('fooBarBaz')).to.equal('fooBarBaz');
+    expect(camelCase('foo1Bar2Baz3')).to.equal('foo1Bar2Baz3');
+
+    expect(camelCase('fOO1BAR2BAZ3')).to.equal('fOO1BAR2BAZ3');
+  });
+
+  it('Should convert a camel case string when a given string is pascal case',
+  function() {
+    expect(camelCase('FooBarBaz')).to.equal('fooBarBaz');
+    expect(camelCase('Foo1Bar2Baz3')).to.equal('foo1Bar2Baz3');
+
+    expect(camelCase('FOO1BAR2BAZ3')).to.equal('foo1bar2baz3');
+  });
+
+  it('Should convert a camel case string when a give string is separated by' +
+  '\n\twhite spaces', function() {
+    expect(camelCase('foo bar baz')).to.equal('fooBarBaz');
+    expect(camelCase('  FOO  BAR  BAZ ')).to.equal('fooBarBaz');
+    expect(camelCase('Foo Bar Baz   ')).to.equal('fooBarBaz');
+
+    expect(camelCase(' f o o b a r  ')).to.equal('fOOBAR');
+  });
+
+  it('Should convert a camel case string when a given string is separated by' +
+  '\n\thyphens', function() {
+    expect(camelCase('foo-bar-baz')).to.equal('fooBarBaz');
+    expect(camelCase('--FOO-BAR--BAZ---')).to.equal('fooBarBaz');
+    expect(camelCase('Foo-Bar-Baz---')).to.equal('fooBarBaz');
+  });
+
+  it('Should convert a camel case string when a given string is separated by' +
+  '\n\tunderscore', function() {
+    expect(camelCase('foo_bar_baz')).to.equal('fooBarBaz');
+    expect(camelCase('__FOO_BAR__BAZ___')).to.equal('fooBarBaz');
+    expect(camelCase('Foo_Bar_Baz___')).to.equal('fooBarBaz');
+  });
+
+  it('Should convert a camel case string when a given string is separated by' +
+  '\n\tnon-alphanumeric chars', function() {
+    expect(camelCase('@foo.bar,  baz!')).to.equal('fooBarBaz');
+    expect(camelCase('%FOO&&BAR # # BAZ$$$')).to.equal('fooBarBaz');
+    expect(camelCase('Foo+Bar = Baz')).to.equal('fooBarBaz');
+  });
+});
+
+
+})();
+(function(){
+'use strict';
+
+
+var expect = chai.expect;
+
+
+
+var constantCase = fav.text.constantCase;
+
+describe('fav.text.constantCase', function() {
+
+  it('Should return an empty string when a given string is an empty string',
+  function() {
+    expect(constantCase('')).to.equal('');
+  });
+
+  it('Should return a string with no conversion when a given string is ' +
+  '\n\tcomposed of only lower cases and numbers', function() {
+    expect(constantCase('foo')).to.equal('FOO');
+    expect(constantCase('foobarbaz')).to.equal('FOOBARBAZ');
+    expect(constantCase('foo123')).to.equal('FOO123');
+    expect(constantCase('foo1bar2baz3')).to.equal('FOO1BAR2BAZ3');
+  });
+
+  it('Should convert a constant case string when a given string is composed' +
+  '\n\t of only upper case characters', function() {
+    expect(constantCase('FOO')).to.equal('FOO');
+    expect(constantCase('FOOBARBAZ')).to.equal('FOOBARBAZ');
+  });
+
+  it('Should convert a constant case string when a given string is constant ' +
+  'case', function() {
+    expect(constantCase('fooBarBaz')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('foo1Bar2Baz3')).to.equal('FOO1_BAR2_BAZ3');
+
+    expect(constantCase('fOO1BAR2BAZ3')).to.equal('F_O_O1_B_A_R2_B_A_Z3');
+  });
+
+  it('Should convert a constant case string when a given string is constant ' +
+  'case', function() {
+    expect(constantCase('FooBarBaz')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('Foo1Bar2Baz3')).to.equal('FOO1_BAR2_BAZ3');
+
+    expect(constantCase('FOO1BAR2BAZ3')).to.equal('FOO1BAR2BAZ3');
+  });
+
+  it('Should convert a constant case string when a give string is separated ' +
+  '\n\tby white spaces', function() {
+    expect(constantCase('foo bar baz')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('  FOO  BAR  BAZ ')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('Foo Bar Baz   ')).to.equal('FOO_BAR_BAZ');
+
+    expect(constantCase(' f o o b a r  ')).to.equal('F_O_O_B_A_R');
+  });
+
+  it('Should convert a constant case string when a given string is separated' +
+  '\n\tby hyphens', function() {
+    expect(constantCase('foo-bar-baz')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('--FOO-BAR--BAZ---')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('Foo-Bar-Baz---')).to.equal('FOO_BAR_BAZ');
+  });
+
+  it('Should convert a constant case string when a given string is separated' +
+  '\n\tby underscore', function() {
+    expect(constantCase('foo_bar_baz')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('__FOO_BAR__BAZ___')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('Foo_Bar_Baz___')).to.equal('FOO_BAR_BAZ');
+  });
+
+  it('Should convert a constant case string when a given string is separated' +
+  '\n\tby non-alphanumeric chars', function() {
+    expect(constantCase('@foo.bar,  baz!')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('%FOO&&BAR # # BAZ$$$')).to.equal('FOO_BAR_BAZ');
+    expect(constantCase('Foo+Bar = Baz')).to.equal('FOO_BAR_BAZ');
+  });
+});
+
+
+})();
+(function(){
+'use strict';
+
+
+var expect = chai.expect;
+
+
+
 var endsWith = fav.text.endsWith;
 
 describe('fav.text.endsWith', function() {
@@ -205,6 +365,86 @@ describe('fav.text.escape["RegExp"]', function() {
       .to.equal('\\^abc\\.\\{1,3\\}\\[1-9\\]\\*\\$');
   });
 });
+
+})();
+(function(){
+'use strict';
+
+
+var expect = chai.expect;
+
+
+
+var kebabCase = fav.text.kebabCase;
+
+describe('fav.text.kebabCase', function() {
+
+  it('Should return an empty string when a given string is an empty string',
+  function() {
+    expect(kebabCase('')).to.equal('');
+  });
+
+  it('Should return a string with no conversion when a given string is ' +
+  '\n\tcomposed of only lower cases and numbers', function() {
+    expect(kebabCase('foo')).to.equal('foo');
+    expect(kebabCase('foobarbaz')).to.equal('foobarbaz');
+    expect(kebabCase('foo123')).to.equal('foo123');
+    expect(kebabCase('foo1bar2baz3')).to.equal('foo1bar2baz3');
+  });
+
+  it('Should convert a kebab case string when a given string is composed' +
+  '\n\t of only upper case characters', function() {
+    expect(kebabCase('FOO')).to.equal('foo');
+    expect(kebabCase('FOOBARBAZ')).to.equal('foobarbaz');
+  });
+
+  it('Should convert a kebab case string when a given string is kebab case',
+  function() {
+    expect(kebabCase('fooBarBaz')).to.equal('foo-bar-baz');
+    expect(kebabCase('foo1Bar2Baz3')).to.equal('foo1-bar2-baz3');
+
+    expect(kebabCase('fOO1BAR2BAZ3')).to.equal('f-o-o1-b-a-r2-b-a-z3');
+  });
+
+  it('Should convert a kebab case string when a given string is kebab case',
+  function() {
+    expect(kebabCase('FooBarBaz')).to.equal('foo-bar-baz');
+    expect(kebabCase('Foo1Bar2Baz3')).to.equal('foo1-bar2-baz3');
+
+    expect(kebabCase('FOO1BAR2BAZ3')).to.equal('foo1bar2baz3');
+  });
+
+  it('Should convert a kebab case string when a give string is separated by' +
+  '\n\twhite spaces', function() {
+    expect(kebabCase('foo bar baz')).to.equal('foo-bar-baz');
+    expect(kebabCase('  FOO  BAR  BAZ ')).to.equal('foo-bar-baz');
+    expect(kebabCase('Foo Bar Baz   ')).to.equal('foo-bar-baz');
+
+    expect(kebabCase(' f o o b a r  ')).to.equal('f-o-o-b-a-r');
+  });
+
+  it('Should convert a kebab case string when a given string is separated by' +
+  '\n\thyphens', function() {
+    expect(kebabCase('foo-bar-baz')).to.equal('foo-bar-baz');
+    expect(kebabCase('--FOO-BAR--BAZ---')).to.equal('foo-bar-baz');
+    expect(kebabCase('Foo-Bar-Baz---')).to.equal('foo-bar-baz');
+  });
+
+  it('Should convert a kebab case string when a given string is separated by' +
+  '\n\tunderscore', function() {
+    expect(kebabCase('foo_bar_baz')).to.equal('foo-bar-baz');
+    expect(kebabCase('__FOO_BAR__BAZ___')).to.equal('foo-bar-baz');
+    expect(kebabCase('Foo_Bar_Baz___')).to.equal('foo-bar-baz');
+  });
+
+  it('Should convert a kebab case string when a given string is separated by' +
+  '\n\tnon-alphanumeric chars', function() {
+    expect(kebabCase('@foo.bar,  baz!')).to.equal('foo-bar-baz');
+    expect(kebabCase('%FOO&&BAR # # BAZ$$$')).to.equal('foo-bar-baz');
+    expect(kebabCase('Foo+Bar = Baz')).to.equal('foo-bar-baz');
+  });
+});
+
 
 })();
 (function(){
@@ -461,6 +701,86 @@ describe('fav.text.pad', function() {
 var expect = chai.expect;
 
 
+
+var pascalCase = fav.text.pascalCase;
+
+describe('fav.text.pascalCase', function() {
+
+  it('Should return an empty string when a given string is an empty string',
+  function() {
+    expect(pascalCase('')).to.equal('');
+  });
+
+  it('Should return a string with no conversion when a given string is ' +
+  '\n\tcomposed of only lower cases and numbers', function() {
+    expect(pascalCase('foo')).to.equal('Foo');
+    expect(pascalCase('foobarbaz')).to.equal('Foobarbaz');
+    expect(pascalCase('foo123')).to.equal('Foo123');
+    expect(pascalCase('foo1bar2baz3')).to.equal('Foo1bar2baz3');
+  });
+
+  it('Should convert a pascal case string when a given string is composed' +
+  '\n\t of only upper case characters', function() {
+    expect(pascalCase('FOO')).to.equal('Foo');
+    expect(pascalCase('FOOBARBAZ')).to.equal('Foobarbaz');
+  });
+
+  it('Should convert a pascal case string when a given string is pascal case',
+  function() {
+    expect(pascalCase('fooBarBaz')).to.equal('FooBarBaz');
+    expect(pascalCase('foo1Bar2Baz3')).to.equal('Foo1Bar2Baz3');
+
+    expect(pascalCase('fOO1BAR2BAZ3')).to.equal('FOO1BAR2BAZ3');
+  });
+
+  it('Should convert a pascal case string when a given string is pascal case',
+  function() {
+    expect(pascalCase('FooBarBaz')).to.equal('FooBarBaz');
+    expect(pascalCase('Foo1Bar2Baz3')).to.equal('Foo1Bar2Baz3');
+
+    expect(pascalCase('FOO1BAR2BAZ3')).to.equal('Foo1bar2baz3');
+  });
+
+  it('Should convert a pascal case string when a give string is separated by' +
+  '\n\twhite spaces', function() {
+    expect(pascalCase('foo bar baz')).to.equal('FooBarBaz');
+    expect(pascalCase('  FOO  BAR  BAZ ')).to.equal('FooBarBaz');
+    expect(pascalCase('Foo Bar Baz   ')).to.equal('FooBarBaz');
+
+    expect(pascalCase(' f o o b a r  ')).to.equal('FOOBAR');
+  });
+
+  it('Should convert a pascal case string when a given string is separated by' +
+  '\n\thyphens', function() {
+    expect(pascalCase('foo-bar-baz')).to.equal('FooBarBaz');
+    expect(pascalCase('--FOO-BAR--BAZ---')).to.equal('FooBarBaz');
+    expect(pascalCase('Foo-Bar-Baz---')).to.equal('FooBarBaz');
+  });
+
+  it('Should convert a pascal case string when a given string is separated by' +
+  '\n\tunderscore', function() {
+    expect(pascalCase('foo_bar_baz')).to.equal('FooBarBaz');
+    expect(pascalCase('__FOO_BAR__BAZ___')).to.equal('FooBarBaz');
+    expect(pascalCase('Foo_Bar_Baz___')).to.equal('FooBarBaz');
+  });
+
+  it('Should convert a pascal case string when a given string is separated by' +
+  '\n\tnon-alphanumeric chars', function() {
+    expect(pascalCase('@foo.bar,  baz!')).to.equal('FooBarBaz');
+    expect(pascalCase('%FOO&&BAR # # BAZ$$$')).to.equal('FooBarBaz');
+    expect(pascalCase('Foo+Bar = Baz')).to.equal('FooBarBaz');
+  });
+});
+
+
+})();
+(function(){
+'use strict';
+
+
+var expect = chai.expect;
+
+
 var repeat = fav.text.repeat;
 
 describe('fav.text.repeat', function() {
@@ -519,6 +839,87 @@ function repeatSimply(text, n) {
   }
   return result;
 }
+
+})();
+(function(){
+'use strict';
+
+
+var expect = chai.expect;
+
+
+
+var snakeCase = fav.text.snakeCase;
+
+describe('fav.text.snakeCase', function() {
+
+  it('Should return an empty string when a given string is an empty string',
+  function() {
+    expect(snakeCase('')).to.equal('');
+  });
+
+  it('Should return a string with no conversion when a given string is ' +
+  '\n\tcomposed of only lower cases and numbers', function() {
+    expect(snakeCase('foo')).to.equal('foo');
+    expect(snakeCase('foobarbaz')).to.equal('foobarbaz');
+    expect(snakeCase('foo123')).to.equal('foo123');
+    expect(snakeCase('foo1bar2baz3')).to.equal('foo1bar2baz3');
+  });
+
+  it('Should convert a snake case string when a given string is composed' +
+  '\n\t of only upper case characters', function() {
+    expect(snakeCase('FOO')).to.equal('foo');
+    expect(snakeCase('FOOBARBAZ')).to.equal('foobarbaz');
+  });
+
+  it('Should convert a snake case string when a given string is snake case',
+  function() {
+    expect(snakeCase('fooBarBaz')).to.equal('foo_bar_baz');
+    expect(snakeCase('foo1Bar2Baz3')).to.equal('foo1_bar2_baz3');
+
+    expect(snakeCase('fOO1BAR2BAZ3')).to.equal('f_o_o1_b_a_r2_b_a_z3');
+  });
+
+  it('Should convert a snake case string when a given string is snake case',
+  function() {
+    expect(snakeCase('FooBarBaz')).to.equal('foo_bar_baz');
+    expect(snakeCase('Foo1Bar2Baz3')).to.equal('foo1_bar2_baz3');
+
+    expect(snakeCase('FOO1BAR2BAZ3')).to.equal('foo1bar2baz3');
+  });
+
+  it('Should convert a snake case string when a give string is separated by' +
+  '\n\twhite spaces', function() {
+    expect(snakeCase('foo bar baz')).to.equal('foo_bar_baz');
+    expect(snakeCase('  FOO  BAR  BAZ ')).to.equal('foo_bar_baz');
+    expect(snakeCase('Foo Bar Baz   ')).to.equal('foo_bar_baz');
+
+    expect(snakeCase(' f o o b a r  ')).to.equal('f_o_o_b_a_r');
+  });
+
+  it('Should convert a snake case string when a given string is separated by' +
+  '\n\thyphens', function() {
+    expect(snakeCase('foo-bar-baz')).to.equal('foo_bar_baz');
+    expect(snakeCase('--FOO-BAR--BAZ---')).to.equal('foo_bar_baz');
+    expect(snakeCase('Foo-Bar-Baz---')).to.equal('foo_bar_baz');
+  });
+
+  it('Should convert a snake case string when a given string is separated by' +
+  '\n\tunderscore', function() {
+    expect(snakeCase('foo_bar_baz')).to.equal('foo_bar_baz');
+    expect(snakeCase('__FOO_BAR__BAZ___')).to.equal('foo_bar_baz');
+    expect(snakeCase('Foo_Bar_Baz___')).to.equal('foo_bar_baz');
+  });
+
+  it('Should convert a snake case string when a given string is separated by' +
+  '\n\tnon-alphanumeric chars', function() {
+    expect(snakeCase('@foo.bar,  baz!')).to.equal('foo_bar_baz');
+    expect(snakeCase('%FOO&&BAR # # BAZ$$$')).to.equal('foo_bar_baz');
+    expect(snakeCase('Foo+Bar = Baz')).to.equal('foo_bar_baz');
+  });
+
+});
+
 
 })();
 (function(){

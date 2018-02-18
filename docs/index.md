@@ -2,6 +2,141 @@
 
 ----
 
+### <u>camelCase(text) : string</u>
+
+Converts a string into camel case.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+After splitting into words, this function joins them and creates a camel case string.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word. (At a result, this function returns a string converted into lower case, e.g. `abc123`).
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+#### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be converted.            |
+
+#### Returns:
+
+A string converted into camel case.
+
+**Type:** string
+
+#### <u>camelCase.split(text) : Array</u>
+
+Splits a string into alphanumeric words.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be splitted.             |
+
+##### Returns:
+
+An array of splitted words.
+
+**Type:** Array
+
+
+#### <u>camelCase.join(words) : string</u>
+
+Joins alphanumeric words and creates a camel case string.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                                     |
+|:----------|:------:|:------------------------------------------------|
+| *words*   | Array  | An array of an alphanumeric words to be joined. |
+
+##### Returns:
+
+A camel case string.
+
+**Type:** string
+
+
+----
+### <u>constantCase(text) : string</u>
+
+Converts a string into constant case.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+After splitting into words, this function joins them and creates a constant case string.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word. (At a result, this function returns a string converted into upper case, e.g. `ABC123`).
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+#### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be converted.            |
+
+#### Returns:
+
+A string converted into constant case.
+
+**Type:** string
+
+
+#### <u>constantCase.split(text) : Array</u>
+
+Splits a string into alphanumeric words.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be splitted.             |
+
+##### Returns:
+
+An array of splitted words.
+
+**Type:** Array
+
+
+#### <u>constantCase.join(words) : string</u>
+
+Joins alphanumeric words and creates a constant case string.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                                     |
+|:----------|:------:|:------------------------------------------------|
+| *words*   | Array  | An array of an alphanumeric words to be joined. |
+
+##### Returns:
+
+A constant case string.
+
+**Type:** string
+
+
+----
 ### <u>endsWith(string, target [, length]) : boolean</u>
 
 Checks if *string* ends with *target*.
@@ -76,6 +211,73 @@ The special characters which are escaped are as follows: `-^]\`.
 ##### Return:
 
 An escaped string.
+
+**Type:** string
+
+
+----
+### <u>kebabCase(text) : string</u>
+
+Converts a string into kebab case.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+After splitting into words, this function joins them and creates a kebab case string.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word. (At a result, this function returns a string converted into lower case, e.g. `abc123`).
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+#### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be converted.            |
+
+#### Returns:
+
+A string converted into kebab case.
+
+**Type:** string
+
+
+#### <u>kebabCase.split(text) : Array</u>
+
+Splits a string into alphanumeric words.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be splitted.             |
+
+##### Returns:
+
+An array of splitted words.
+
+**Type:** Array
+
+#### <u>kebabCase.join(words) : string</u>
+
+Joins alphanumeric words and creates a kebab case string.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                                     |
+|:----------|:------:|:------------------------------------------------|
+| *words*   | Array  | An array of an alphanumeric words to be joined. |
+
+##### Returns:
+
+A kebab case string.
 
 **Type:** string
 
@@ -164,6 +366,74 @@ The padded string.
 
 
 ----
+### <u>pascalCase(text) : string</u>
+
+Converts a string into pascal case.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+After splitting into words, this function joins them and creates a pascal case string.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+#### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be converted.            |
+
+#### Returns:
+
+A string converted into pascal case.
+
+**Type:** string
+
+
+#### <u>pascalCase.split(text) : Array</u>
+
+Splits a string into alphanumeric words.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be splitted.             |
+
+##### Returns:
+
+An array of splitted words.
+
+**Type:** Array
+
+
+#### <u>pascalCase.join(words) : string</u>
+
+Joins alphanumeric words and creates a pascal case string.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                                     |
+|:----------|:------:|:------------------------------------------------|
+| *words*   | Array  | An array of an alphanumeric words to be joined. |
+
+##### Returns:
+
+A pascal case string.
+
+**Type:** string
+
+
+----
 ### <u>repeat(source, ntimes) : string</u>
 
 Repeat *source* *ntimes* times.
@@ -180,6 +450,74 @@ Repeat *source* *ntimes* times.
 #### Return:
 
 The repeated string.
+
+**Type:** string
+
+
+----
+### <u>snakeCase(text) : string</u>
+
+Converts a string into snake case.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+After splitting into words, this function joins them and creates a snake case string.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word. (At a result, this function returns a string converted into lower case, e.g. `abc123`).
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+#### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be converted.            |
+
+#### Returns:
+
+A string converted into snake case.
+
+**Type:** string
+
+
+#### <u>snakeCase.split(text) : Array</u>
+
+Splits a string into alphanumeric words.
+
+This function trys to split *text* into words with non-alphanumeric characters first. If *text* does not contains non-alphanumeric character, this function trys to split *text* into words before capital letters.
+
+If *text* is a string which is composed of either lower case characters and numerics only (e.g. `abc123`), or upper case characters and numerics only (e.g. `ABC123`), this function regards *text* as one word.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                          |
+|:----------|:------:|:-------------------------------------|
+| *text*    | string | A string to be splitted.             |
+
+##### Returns:
+
+An array of splitted words.
+
+**Type:** Array
+
+
+#### <u>snakeCase.join(words) : string</u>
+
+Joins alphanumeric words and creates a snake case string.
+
+***NOTE:*** *This function doesn't check data types of the arguments, and assumes that they are given as per the specific data types.*
+
+##### Parameters:
+
+| Parameter |  Type  | Description                                     |
+|:----------|:------:|:------------------------------------------------|
+| *words*   | Array  | An array of an alphanumeric words to be joined. |
+
+##### Returns:
+
+A snake case string.
 
 **Type:** string
 
