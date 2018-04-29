@@ -1,4 +1,4 @@
-# [@fav/text][repo-url] ver. 1.0.0 API document
+# [@fav/text][repo-url] ver. 1.1.1 API document
 
 ----
 
@@ -168,12 +168,19 @@ This function set provides escapings for following syntaxes and formats:
 
 - [RegExp](#regexp)
 - [RegExpCharClass](#regexp_charclass)
+- [HtmlEntity](#html_entity)
+- [HtmlAttribute](#html_attribute)
 
-**NOTE:** The functions in this set doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
+In addition, the factory functions for two types of escaping are provided:
+
+- [byProposition](#by_proposition)
+- [byReplacement](#by_replacement)
+
+**NOTE:** These functions doesn't check data types of the arguments, and assumes that they are given as per the specific data types.
 
 <a name="regexp"></a>
 
-#### <u>escape\['RegExp'\](source) : string</u>
+#### <u>escape.RegExp(source) : string</u>
 
 Escapes special characters of Regular Expression.
 
@@ -196,7 +203,7 @@ An escaped string.
 
 <a name="regexp_charclass"></a>
 
-#### <u>escape\['RegExpCharClass'\](source) : string</u>
+#### <u>escape.RegExpCharClass(source) : string</u>
 
 Escapes special characters of Regular Expression Character Class.
 
@@ -213,6 +220,103 @@ The special characters which are escaped are as follows: `-^]\`.
 An escaped string.
 
 **Type:** string
+
+#### <u>escape.HtmlEntity(source) : string</u>
+
+Escapes special characters of HTML entity to character references, etc.
+
+The escape mapping for HTML entity is as follows:
+
+|  source character | replaced text |
+|:-----------------:|:-------------:|
+| `'<'` (\u003c)    | `'&lt;'`      |
+| `'>'` (\u003e)    | `'&gt;'`      |
+| `'&'` (\u0026)    | `'&amp;'`     |
+| `' '` (\u0020)    | `'&nbsp;'`    |
+| `'\n'` (\u000a)   | `'<br/>'`     |
+
+##### Parameter:
+
+| Parameter |  Type  | Description                                |
+|-----------|:------:|--------------------------------------------|
+| source    | string | The source string.                         |
+
+##### Return:
+
+An escaped string.
+
+**Type:** string
+
+#### <u>escape.HtmlAttribute(source) : string</u>
+
+Escapes special characters of HTML attributes to character references.
+
+The escape mapping for HTML attribute is as follows:
+
+|  source character | replaced text |
+|:-----------------:|:-------------:|
+| `'<'` (\u003c)    | `'&lt;'`      |
+| `'>'` (\u003e)    | `'&gt;'`      |
+| `'&'` (\u0026)    | `'&amp;'`     |
+| `'"'` (\u0022)    | `'&quot;'`    |
+| `"'"` (\u0027)    | `'&apos;'`    |
+
+##### Parameter:
+
+| Parameter |  Type  | Description                                |
+|-----------|:------:|--------------------------------------------|
+| source    | string | The source string.                         |
+
+##### Return:
+
+An escaped string.
+
+**Type:** string
+
+#### <u>escape.byPreposition(escapingChar [, ...escapedChars]) : function</u>
+
+Creates an escape function which escapes special characters by preposition of an espacing character, for example:
+
+```js
+var escape = fav.text.escape.byPreposition('\\', '"\'');
+escape('escaping ", \' and \\.');
+// => 'escaping \\", \\\' and \\\\.'
+```
+
+##### Parameter:
+
+| Parameter    |  Type  | Description                                              |
+|--------------|:------:|----------------------------------------------------------|
+| escapingChar | string | The escaping character placed before special characters. This character is escaped, too. |
+| escapedChars | string | The special characters to be escaped.                    |
+
+##### Return:
+
+An escaping function.
+
+**Type:** function
+
+#### <u>escape.byReplacement(escapingMap) : function</u>
+
+Creates an escape function which escapes special characters by replacement to corresponding strings, for examples:
+
+```js
+var escape = fav.text.escape.byReplacement({ '"': '&quot;', "'": '&apos;' });
+escape('escaping " and  \'.');
+// => 'escaping &quot; and &apos;.'
+```
+
+##### Parameter:
+
+| Parameter    |  Type  | Description                                              |
+|--------------|:------:|----------------------------------------------------------|
+| escapingMap  | object | The plain object of which keys and values are mappings of escaped characters and replaced strings.  |
+
+##### Return:
+
+An escaping function.
+
+**Type:** function
 
 
 ----

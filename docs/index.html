@@ -7,7 +7,7 @@
 <script src="./api.js"></script>
 </head>
 <body>
-<h1 id="-fav-text-ver-1-0-0-api-document"><a href="https://github.com/sttk/fav-text/">@fav/text</a> ver. 1.0.0 API document</h1>
+<h1 id="-fav-text-ver-1-1-1-api-document"><a href="https://github.com/sttk/fav-text/">@fav/text</a> ver. 1.1.1 API document</h1>
 <hr>
 <h3 id="-u-camelcase-text-string-u-"><u>camelCase(text) : string</u></h3>
 <p>Converts a string into camel case.</p>
@@ -200,10 +200,17 @@ If <em>length</em> is specified, this function ends comparison at index <code>le
 <ul>
 <li><a href="#regexp">RegExp</a></li>
 <li><a href="#regexp_charclass">RegExpCharClass</a></li>
+<li><a href="#html_entity">HtmlEntity</a></li>
+<li><a href="#html_attribute">HtmlAttribute</a></li>
 </ul>
-<p><strong>NOTE:</strong> The functions in this set doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
+<p>In addition, the factory functions for two types of escaping are provided:</p>
+<ul>
+<li><a href="#by_proposition">byProposition</a></li>
+<li><a href="#by_replacement">byReplacement</a></li>
+</ul>
+<p><strong>NOTE:</strong> These functions doesn&#39;t check data types of the arguments, and assumes that they are given as per the specific data types.</p>
 <p><a name="regexp"></a></p>
-<h4 id="-u-escape-regexp-source-string-u-"><u>escape[&#39;RegExp&#39;](source) : string</u></h4>
+<h4 id="-u-escape-regexp-source-string-u-"><u>escape.RegExp(source) : string</u></h4>
 <p>Escapes special characters of Regular Expression.</p>
 <p>The special characters which are escaped are as follows: <code>^$\.*+?()[]{}|</code>.</p>
 <p>The specification of the special characters of Regular Expression comes from <a href="http://ecma-international.org/ecma-262/7.0/#sec-patterns">ECMA-262 — 21.2 RegExp (Regular Expression) Objects</a>.</p>
@@ -228,7 +235,7 @@ If <em>length</em> is specified, this function ends comparison at index <code>le
 <p>An escaped string.</p>
 <p><strong>Type:</strong> string</p>
 <p><a name="regexp_charclass"></a></p>
-<h4 id="-u-escape-regexpcharclass-source-string-u-"><u>escape[&#39;RegExpCharClass&#39;](source) : string</u></h4>
+<h4 id="-u-escape-regexpcharclass-source-string-u-"><u>escape.RegExpCharClass(source) : string</u></h4>
 <p>Escapes special characters of Regular Expression Character Class.</p>
 <p>The special characters which are escaped are as follows: <code>-^]\</code>.</p>
 <h5 id="parameter-">Parameter:</h5>
@@ -251,6 +258,169 @@ If <em>length</em> is specified, this function ends comparison at index <code>le
 <h5 id="return-">Return:</h5>
 <p>An escaped string.</p>
 <p><strong>Type:</strong> string</p>
+<h4 id="-u-escape-htmlentity-source-string-u-"><u>escape.HtmlEntity(source) : string</u></h4>
+<p>Escapes special characters of HTML entity to character references, etc.</p>
+<p>The escape mapping for HTML entity is as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">source character</th>
+<th style="text-align:center">replaced text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&#39;&lt;&#39;</code> (\u003c)</td>
+<td style="text-align:center"><code>&#39;&amp;lt;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#39;&gt;&#39;</code> (\u003e)</td>
+<td style="text-align:center"><code>&#39;&amp;gt;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#39;&amp;&#39;</code> (\u0026)</td>
+<td style="text-align:center"><code>&#39;&amp;amp;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#39; &#39;</code> (\u0020)</td>
+<td style="text-align:center"><code>&#39;&amp;nbsp;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#39;\n&#39;</code> (\u000a)</td>
+<td style="text-align:center"><code>&#39;&lt;br/&gt;&#39;</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="parameter-">Parameter:</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td style="text-align:center">string</td>
+<td>The source string.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="return-">Return:</h5>
+<p>An escaped string.</p>
+<p><strong>Type:</strong> string</p>
+<h4 id="-u-escape-htmlattribute-source-string-u-"><u>escape.HtmlAttribute(source) : string</u></h4>
+<p>Escapes special characters of HTML attributes to character references.</p>
+<p>The escape mapping for HTML attribute is as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">source character</th>
+<th style="text-align:center">replaced text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&#39;&lt;&#39;</code> (\u003c)</td>
+<td style="text-align:center"><code>&#39;&amp;lt;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#39;&gt;&#39;</code> (\u003e)</td>
+<td style="text-align:center"><code>&#39;&amp;gt;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#39;&amp;&#39;</code> (\u0026)</td>
+<td style="text-align:center"><code>&#39;&amp;amp;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#39;&quot;&#39;</code> (\u0022)</td>
+<td style="text-align:center"><code>&#39;&amp;quot;&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;&#39;&quot;</code> (\u0027)</td>
+<td style="text-align:center"><code>&#39;&amp;apos;&#39;</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="parameter-">Parameter:</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td style="text-align:center">string</td>
+<td>The source string.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="return-">Return:</h5>
+<p>An escaped string.</p>
+<p><strong>Type:</strong> string</p>
+<h4 id="-u-escape-bypreposition-escapingchar-escapedchars-function-u-"><u>escape.byPreposition(escapingChar [, ...escapedChars]) : function</u></h4>
+<p>Creates an escape function which escapes special characters by preposition of an espacing character, for example:</p>
+<pre><code class="lang-js">var escape = fav.text.escape.byPreposition(&#39;\\&#39;, &#39;&quot;\&#39;&#39;);
+escape(&#39;escaping &quot;, \&#39; and \\.&#39;);
+// =&gt; &#39;escaping \\&quot;, \\\&#39; and \\\\.&#39;
+</code></pre>
+<h5 id="parameter-">Parameter:</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>escapingChar</td>
+<td style="text-align:center">string</td>
+<td>The escaping character placed before special characters. This character is escaped, too.</td>
+</tr>
+<tr>
+<td>escapedChars</td>
+<td style="text-align:center">string</td>
+<td>The special characters to be escaped.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="return-">Return:</h5>
+<p>An escaping function.</p>
+<p><strong>Type:</strong> function</p>
+<h4 id="-u-escape-byreplacement-escapingmap-function-u-"><u>escape.byReplacement(escapingMap) : function</u></h4>
+<p>Creates an escape function which escapes special characters by replacement to corresponding strings, for examples:</p>
+<pre><code class="lang-js">var escape = fav.text.escape.byReplacement({ &#39;&quot;&#39;: &#39;&amp;quot;&#39;, &quot;&#39;&quot;: &#39;&amp;apos;&#39; });
+escape(&#39;escaping &quot; and  \&#39;.&#39;);
+// =&gt; &#39;escaping &amp;quot; and &amp;apos;.&#39;
+</code></pre>
+<h5 id="parameter-">Parameter:</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>escapingMap</td>
+<td style="text-align:center">object</td>
+<td>The plain object of which keys and values are mappings of escaped characters and replaced strings.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="return-">Return:</h5>
+<p>An escaping function.</p>
+<p><strong>Type:</strong> function</p>
 <hr>
 <h3 id="-u-kebabcase-text-string-u-"><u>kebabCase(text) : string</u></h3>
 <p>Converts a string into kebab case.</p>

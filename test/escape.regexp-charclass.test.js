@@ -33,5 +33,9 @@ describe('fav.text.escape["RegExpCharClass"]', function() {
   it('Should escape only special characters in a string', function() {
     expect(escape('^a-z1-9]\\ABC')).to.equal('\\^a\\-z1\\-9\\]\\\\ABC');
   });
+
+  it('Should not error when an argument is empty', function() {
+    expect(escape('')).to.equal('');
+  });
 });
 

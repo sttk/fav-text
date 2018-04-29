@@ -43,4 +43,8 @@ describe('fav.text.escape["RegExp"]', function() {
     expect(escape('^abc.{1,3}[1-9]*$'))
       .to.equal('\\^abc\\.\\{1,3\\}\\[1-9\\]\\*\\$');
   });
+
+  it('Should not error when an argument is empty', function() {
+    expect(escape('')).to.equal('');
+  });
 });
